@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="mtg-lifecounter">
+  <head>
+    <meta charset="utf-8">
+    <title>Magic the Gathering - Lifecounter</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/include/style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-controller="LifecounterController">
+
+    <div class="container">
+      <h1 ng-show="network === 'connecting'">Waiting for player</h1>
+
+      <div class="row">
+        <div class="lifecounter-current-indicator col-xs-12">
+          <button ng-click="next()" type="button" class="btn btn-primary">
+            <span ng-show="player === 'you'" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            <span ng-show="player === 'opponent'" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lifecounter-indicator col-xs-6">
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </div>
+        <div class="lifecounter-indicator col-xs-6">
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lifecounter col-xs-6">
+          {{opponent}}
+        </div>
+        <div class="lifecounter col-xs-6">
+          {{you}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="lifecounter col-xs-6">
+          <button ng-click="sub(1)" type="button" class="btn btn-danger">-1</button>
+        </div>
+        <div class="lifecounter col-xs-6">
+          <button ng-click="sub(5)" type="button" class="btn btn-danger">-5</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="lifecounter col-xs-6">
+          <button ng-click="add(1)" type="button" class="btn btn-success">+1</button>
+        </div>
+        <div class="lifecounter col-xs-6">
+          <button ng-click="add(5)" type="button" class="btn btn-success">+5</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js" charset="utf-8"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/script.js" charset="utf-8"></script>
+  </body>
+</html>

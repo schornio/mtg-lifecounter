@@ -1,0 +1,5 @@
+window.lifecounterApp = {
+  controller: {
+    workflow: {}
+  },
+};

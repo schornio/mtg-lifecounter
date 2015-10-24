@@ -1,0 +1,5 @@
+{
+  "esnext": true,
+  "globalstrict": true,
+  "predef": [ "lifecounterApp", "angular", "io" ]
+}

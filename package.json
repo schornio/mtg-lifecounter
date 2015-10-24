@@ -1,0 +1,31 @@
+{
+  "name": "mtg-lifecounter",
+  "version": "0.0.0",
+  "description": "Lifecounter for trading card game Magic the Gathering",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schornio/mtg-lifecounter.git"
+  },
+  "author": "Thomas Schorn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schornio/mtg-lifecounter/issues"
+  },
+  "homepage": "https://github.com/schornio/mtg-lifecounter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp-babel": "^5.3.0",
+    "gulp-wrap": "^0.11.0",
+    "socket.io": "^1.3.7"
+  }
+}
