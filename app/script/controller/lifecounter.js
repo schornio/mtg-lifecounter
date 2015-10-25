@@ -1,7 +1,7 @@
 'use strict';
 
 function LifecounterController($scope) {
-  let socket = io.connect('http://localhost:8080');
+  let socket = io.connect('http://mtg.schorn.io');
 
   $scope.you = 20;
   $scope.opponent = 20;
@@ -10,8 +10,8 @@ function LifecounterController($scope) {
 
   $scope.network = 'connecting';
 
-  $scope.add = function (x) {
-    switch ($scope.player) {
+  $scope.add = function (x, player) {
+    switch (player) {
       case 'you':
         $scope.you += x;
         socket.emit('lifecounter', { player: 'you', count: $scope.you });
@@ -23,8 +23,8 @@ function LifecounterController($scope) {
     }
   };
 
-  $scope.sub = function (x) {
-    switch ($scope.player) {
+  $scope.sub = function (x, player) {
+    switch (player) {
       case 'you':
         $scope.you -= x;
         socket.emit('lifecounter', { player: 'you', count: $scope.you });
